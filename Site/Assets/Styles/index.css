@@ -1,0 +1,224 @@
+/*
+    Estilos das páginas de Login (Cliente/index.html) e (Admin/index.html)
+*/
+
+body {
+    display: flex;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+                       rgba(0, 0, 0, 0.5)), url("../Images/salao.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    justify-self:center;
+    width: 50vw;
+    height: 100vh;
+    align-self: center;
+    flex-direction: column;
+}
+
+header {
+    background-image: url("../Icons/background.svg");
+    background-repeat: repeat;
+    background-size: 70%;
+    width: 650px;
+    border-radius: 25px;
+    align-self: center;
+
+    font-size: 4em;
+    font-family: 'Great Vibes', serif;
+    font-weight: 10;
+    font-style: italic;
+    color: #FFFFFF;
+    text-align: center;
+    
+    padding: 10px;
+    margin-top: 50px;
+}
+
+#section {
+    margin-top: 50px;
+    background-color: #F5F5F5;
+    border-radius: 25px;
+    width: 650px;
+    justify-content: space-evenly;
+    align-self: center;
+}
+
+#section h1 {
+    font-size: 2.15em;
+    font-family: "New Century Schoolbook", serif;
+    font-weight: 1050;
+    color: #A2A2A2;
+    text-align: center;
+    margin-top: 7.5%;
+}
+
+#section h1::after{
+    content: '';
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid #E7E7E7;
+    border-radius: 50%;
+}
+
+#section form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 80%;
+    margin: 7.5% auto 0 auto;
+    margin-top: 7.5%;
+}
+
+#section form label {
+    font-family: "barlow", sans-serif;
+    font-size: 1.25em;
+    color: #A2A2A2;
+    padding-left: 4px;
+    margin-bottom: 4px;
+}
+
+#section form input {
+    font-family: "barlow", sans-serif;
+    font-size: 1.35em;
+    color: #282828;
+    padding: 6px;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #E7E7E7;
+    border-radius: 5px 0 0 5px;
+    margin-bottom: 7.5%;
+}
+
+#section input::-webkit-outer-spin-button,
+#section input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#section form div{
+    display: flex;
+    flex-direction: row;
+}
+
+#section form div #input-senha {
+    margin-bottom: 0;    
+    flex: 1;
+}
+
+*::-ms-reveal,
+*::-ms-clear {
+    display: none;
+}
+
+#section form div span {
+    cursor: pointer;
+    padding: 6px;
+    font-size: 1.35em;
+    border-radius: 0 5px 5px 0;
+    border-bottom: 1px solid #E7E7E7;
+    background-color: #FFFFFF;
+    vertical-align: text-bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#section form div span #fechado {
+    display: block;
+    width: 1em;
+    user-select: none;
+}
+
+#section form div span #aberto {
+    display: none;
+    width: 1em;
+    user-select: none;
+}
+
+#section form button {
+    font-size: 1.25em;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    outline: none;
+    user-select: none;
+    padding: 10px;
+    background-color: #9900FF;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: -2px 2px 0px rgba(40, 40, 40, 0.25);
+    transition: transform .2s;
+    margin-top: 10%;
+    cursor: pointer;
+}
+
+#section form button:hover {
+    transform: scale(1.02)
+}
+
+#section form button:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+#section form button:disabled:hover {
+    transform: scale(1)
+}
+
+#section footer {
+    margin-top: 65px;
+    margin-bottom: 30px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+}
+
+#section footer span {
+    font-weight: 700;
+    display: block;
+    color: #9900FF;
+}
+
+#section footer span:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+
+    body{
+        overflow: hidden;
+        background-image: none;
+    }
+
+    #section {
+        width: 100vw;
+    }
+
+    #section header{
+        font-size: x-small;
+        background-size: 200%;
+    }
+
+    #section h1{
+        font-size: 1.75em;
+    }
+
+    #section h1::after{
+        width: 60%;
+    }
+
+    #section form {
+        width: 40%;
+        padding: 0;
+        margin: 7.5% auto 0 auto;
+    }
+
+    #section footer {
+        margin-bottom: 40px;
+    }
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/Site/Assets/Icons/favicon.ico">
+    <!-- Importação de Arquivos de Estilo (CSS) -->
+    <link rel="stylesheet" href="../../Assets/Styles/reset.css">
+    <link rel="stylesheet" href="../../Assets/Styles/index.css">
+    <!-- Importação de Arquivos de Script (JS) -->
+    <!-- Tela de Login do Painel Administrativo -->
+    <title>Login • Salão de Beleza da Leila</title>
+</head>
+<body>
+    <!-- Cabeçalho da Página -->
+    <header>Salão de Beleza da Leila</header>
+    <section id="section">
+        <!-- Título da Página -->
+        <h1>Acesso do Adminsitrador</h1>
+
+        <!-- Formulário de Login -->
+        <form>
+            <label for="input-usuario">Usuário</label>
+            <input id="input-usuario" min="1">
+            <label for="input-senha">Senha</label>
+            <div>
+                <input id="input-senha" type="password">
+            </div>
+            <button id="botao-login" type="button" disabled>Entrar</button>
+        </form>
+
+        <!-- Rodapé da Página -->
+        <footer>
+            É cliente?
+            <span onclick="window.location.href='http://127.0.0.1:5500/Site/Views/Cliente/';">Clique aqui</span>
+        </footer>
+</section>
+</body>
+</html>
