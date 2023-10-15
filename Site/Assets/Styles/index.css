@@ -91,12 +91,6 @@ header {
     margin-bottom: 7.5%;
 }
 
-#section input::-webkit-outer-spin-button,
-#section input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
 #section form div{
     display: flex;
     flex-direction: row;
@@ -105,11 +99,6 @@ header {
 #section form div #input-senha {
     margin-bottom: 0;    
     flex: 1;
-}
-
-*::-ms-reveal,
-*::-ms-clear {
-    display: none;
 }
 
 #section form div span {
@@ -123,18 +112,6 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#section form div span #fechado {
-    display: block;
-    width: 1em;
-    user-select: none;
-}
-
-#section form div span #aberto {
-    display: none;
-    width: 1em;
-    user-select: none;
 }
 
 #section form button {
@@ -187,20 +164,24 @@ header {
     cursor: pointer;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
 
     body{
         overflow: hidden;
         background-image: none;
     }
 
-    #section {
-        width: 100vw;
+    header{
+        margin-left: 40px;;
+        font-size: larger;
+        background-size: 150%;
+        width:max-content;
     }
 
-    #section header{
-        font-size: x-small;
-        background-size: 200%;
+    #section {
+        width: 95vw;
+        align-self: flex-start;
+        margin-left: 10px;
     }
 
     #section h1{
@@ -215,10 +196,61 @@ header {
         width: 40%;
         padding: 0;
         margin: 7.5% auto 0 auto;
+        font-size: small;
+    }
+
+    #section form div #input-senha {
+        width: 20%;
     }
 
     #section footer {
         margin-bottom: 40px;
     }
 
+}
+
+@media screen and (min-width: 1200px) and (max-width: 150px) {
+    body{
+        overflow: hidden;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+                       rgba(0, 0, 0, 0.5)), url("../Images/salao2.png");
+        background-size: 100%;
+    }
+
+    header{
+        margin-left: 60px;;
+        align-content: center;
+        background-size: 100%;
+        width:max-content;
+    }
+
+    #section {
+        overflow: hidden;
+        width: 60vw;
+        align-self: flex-start;
+        margin-left: 10px;
+    }
+
+    #section h1{
+        font-size: 1.75em;
+    }
+
+    #section h1::after{
+        width: 60%;
+    }
+
+    #section form {
+        width: 40%;
+        padding: 0;
+        margin: 7.5% auto 0 auto;
+        font-size: small;
+    }
+
+    #section form div #input-senha {
+        width: 20%;
+    }
+
+    #section footer {
+        margin-bottom: 40px;
+    }
 }

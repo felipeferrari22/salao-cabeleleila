@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../Assets/Icons/favicon.ico">
+    <!-- Importação de Arquivos de Estilo (CSS) -->
+    <link rel="stylesheet" href="../../Assets/Styles/reset.css">
+    <link rel="stylesheet" href="../../Assets/Libraries/vanilla-calendar/vanilla-calendar.min.css">
+    <link rel="stylesheet" href="../../Assets/Styles/cliente-calendario.css">
+    <!-- Importação de Arquivos de Script (JS) -->
+    <script defer src="../../Assets/Libraries/vanilla-calendar/vanilla-calendar.min.js"></script>
+    <script defer src="../../Assets/Scripts/cliente-calendario.js"></script>
+    <script defer src="../../Assets/Scripts/cliente-cabecalho.js"></script>
+    <!-- Tela com o Calendário (Morador) -->
+    <title>Calendário de Dias</title>
+</head>
+<body>
+    <!-- Cabeçalho da página [Logout e Menu] -->
+    <header id="cabecalho">
+        
+        <!-- Número do Apto no cabeçalho -->
+        <h1 id="apto-cabecalho"> Apto...</h1>
+        
+        <!-- Botão de Logout -->
+        <button id="botao-logout">
+            <img src="../../Assets/Icons/logout.svg" alt="X">
+            Logout
+        </button>        
+    </header>
+    <!-- Conteúdo da Página -->
+    <section class="container-calendario">
+        
+        <!-- Título e Subtítulo da Página -->
+        <div class="titulo">
+            <h1>Calendário de Locação</h1>
+            <h2>Selecione um dia para ver sua disponibilidade</h2>
+        </div>
+
+        <!-- Calendário {VanillaCalendar} -->
+        <div id="calendar"></div>
+
+        <!-- Botão de Meus Agendamentos -->
+        <a href="./agendamentos.html">Meus Agendamentos</a>
+
+    </section>
+
+    <!-- Modal (overlay) de confirmação -->
+    <!-- Fundo escuro -->
+    <section class="container-modal-confirmacao">
+
+        <!-- Fundo Claro -->
+        <div class="modal-confirmacao">
+            <!-- Botão de Fechar -->
+            <span id="span-fechar-modal-confirmacao">
+                <img src="../../Resources/Icons/fechar.svg" alt="X">
+            </span>
+
+            <!-- Cabeçalho do Modal -->
+            <header>
+                <h1>Detalhes</h1>
+                <div id="container-detalhes">
+                    <h2 id="apto-modal">...</h2>
+                    <h3 id="data-modal">...</h3>
+                    <h4 id="limite-modal">...</h4>
+                </div>
+            </header>
+
+            <!-- Container para as locações -->
+            <div style="display: flex;" id="container-locacoes">
+                <h1>Selecione o espaço que deseja alugar</h1>
+                <!--  
+                    <div class="locacao">
+                    <input type="radio" name="radio" id="radio1" />
+                    <div class="cabecalho-locacao">
+                        <label>Piscina Maluca</label>
+                        <img src="../../Resources/Images/imagem-locacao.png" alt="Salão de Festa">
+                    </div>
+                    <div class="corpo-locacao">
+                        <h2>DISPONÍVEL</h2>
+                        <h3>R$ 280,00</h3>
+                    </div>
+                </div>
+                -->
+                
+            </div>
+
+            <!-- Botão de Agendar -->
+            <button type="button" id="botao-agendar-modal-confirmacao" disabled>
+                Agendar
+            </button>
+            <!-- (Outro) Botão de Fechar -->
+            <button type="button" id="botao-fechar-modal-confirmacao">
+                Cancelar
+            </button>
+        </div>
+
+    </section>
+</body>
+</html>
