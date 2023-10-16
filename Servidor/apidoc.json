@@ -1,0 +1,10 @@
+{
+    "name": "Salão de Beleza da Leila API",
+    "version": "1.0.0",
+    "description": "",
+    "title": "Salão de Beleza da Leila API",
+    "url": "http://localhost:3000",
+    "template": {
+        "showRequiredLabels": true
+    }
+}
