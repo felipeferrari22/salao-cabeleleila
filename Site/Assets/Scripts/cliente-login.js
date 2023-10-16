@@ -6,3 +6,7 @@ const botaoIrAdmin = document.getElementById("ir-para-admin")
 document.getElementById("ir-para-admin").addEventListener("click", () => {
     window.location.href = "../Admin/index.html"
 })
+
+document.getElementById("ir-para-cadastro").addEventListener("click", () => {
+    window.location.href = "../Cliente/cadastro.html"
+})

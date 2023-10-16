@@ -91,29 +91,6 @@ header {
     margin-bottom: 7.5%;
 }
 
-#section form div{
-    display: flex;
-    flex-direction: row;
-}
-
-#section form div #input-senha {
-    margin-bottom: 0;    
-    flex: 1;
-}
-
-#section form div span {
-    cursor: pointer;
-    padding: 6px;
-    font-size: 1.35em;
-    border-radius: 0 5px 5px 0;
-    border-bottom: 1px solid #E7E7E7;
-    background-color: #FFFFFF;
-    vertical-align: text-bottom;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 #section form button {
     font-size: 1.25em;
     font-family: "Barlow", sans-serif;
@@ -127,7 +104,6 @@ header {
     border: 0;
     box-shadow: -2px 2px 0px rgba(40, 40, 40, 0.25);
     transition: transform .2s;
-    margin-top: 10%;
     cursor: pointer;
 }
 
@@ -150,6 +126,7 @@ header {
     font-size: 1em;
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 #section h2 span {
