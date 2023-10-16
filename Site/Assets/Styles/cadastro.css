@@ -50,7 +50,7 @@ header {
     font-weight: 1050;
     color: #A2A2A2;
     text-align: center;
-    margin-top: 7.5%;
+    margin-top: 4.5%;
 }
 
 #section h1::after{
@@ -68,7 +68,7 @@ header {
     flex-direction: column;
     width: 80%;
     margin: 7.5% auto 0 auto;
-    margin-top: 7.5%;
+    margin-top: 3.5%;
 }
 
 #section form label {
@@ -88,7 +88,7 @@ header {
     border: 0;
     border-bottom: 1px solid #E7E7E7;
     border-radius: 5px 0 0 5px;
-    margin-bottom: 7.5%;
+    margin-bottom: 5.5%;
 }
 
 #section form button {
