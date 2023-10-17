@@ -92,7 +92,8 @@ const LoginCliente = async (req, res) => {
             const dados = {
                 email: cliente.email,                    
                 nome: cliente.nome,
-                id: cliente.id
+                id: cliente.id,
+                belongsTo: "CLIENTE"
             }
             const accessToken= jwt.sign(
                 dados,
@@ -112,7 +113,127 @@ main()
     .finally(async ()=>{await prisma.$disconnect()})
 }
 
+/**
+ * @api {post} /SolicitarAgendamento Solicitar Agendamento
+ * @apiName SolicitarAgendamento
+ * @apiGroup Solicitações
+ * @apiVersion 1.0.0
+ * 
+ * @apiPermission Cliente
+ * @apiHeader {String} auth Token de acesso JWT
+ * @apiHeaderExample {json} Exemplo de Header:
+ * {
+ *  "auth": [Token de Acesso JWT]
+ * }
+ * 
+ * @apiBody {Int} servicos_id Id do serviço
+ * @apiBody {String} data Data do agendamento (DD/MM/YY)
+ * @apiBody {String} hora Horário (HH:MM)
+ * 
+ * @apiSuccessExample Exemplo de Sucesso:
+ * {
+ *  message: "Solicitação realizada"
+ * }
+ * @apiErrorExample Exemplo de Erro:
+ * {
+ *  message: "Serviço não encontrado"
+ * }
+ */
+const SolicitarAgendamento = (req, res) =>  {
+    const main = async () => {
+        if(req.dados.belongsTo !== "CLIENTE") return res.status(403).send({message: "Permissão negada [!Cliente]"})
+
+        const { servicos_id, data, hora } = req.body
+
+        const servicos = await prisma.servicos.findUnique({
+            where: {id: parseInt(servicos_id)}
+        })
+        if(servicos === null) return res.status(404).send({message: "Serviço não encontrado"})
+
+        await prisma.agendamento.create({
+            data: {
+                status: "Pendente",
+                data: data,
+                hora: hora,
+                servicos: servicos.nome,
+                servicos_id: parseInt(servicos_id),
+                cliente_id: parseInt(req.dados.id),
+            }
+        })
+
+        return res.status(201).send({message: "Solicitação realizada"})
+    }
+
+    main()
+    .catch((err)=>{res.status(400).send({message: "Erro na solicitação", error: err}); throw err})
+    .finally(async ()=>{await prisma.$disconnect()})
+}
+
+/**
+ * @api {get} /BuscarMeusAgendamentos Buscar Agendamentos do Cliente
+ * @apiName Buscar Agendamentos do Cliente
+ * @apiGroup Solicitações
+ * @apiVersion 1.0.0
+ * 
+ * @apiPermission Cliente
+ * @apiHeader {String} auth Token de acesso JWT
+ * @apiHeaderExample {json} Exemplo de Header:
+ * {
+ *  "auth": [Token de Acesso JWT]
+ * }
+ *  
+ * @apiSuccessExample Exemplo de Sucesso:
+ * {
+ *  message: "Busca feita com sucesso",
+ *  usuarios: [{id, data, hora, servicos, status}, ...]
+ * }
+ * @apiErrorExample Exemplo de Erro:
+ * {
+ *  message: "Erro na busca de agendamentos",
+ *  error: {errorObject}
+ * }
+ */
+
+const BuscarMeusAgendamentos = (req, res) => {
+    const main = async () => {
+        if(req.dados.belongsTo !== "CLIENTE") return res.status(403).send({message: "Permissão negada [!Cliente]"})
+        
+        const cliente_id = parseInt(req.dados.id)
+
+        const agendamentos = await prisma.agendamento.findMany({
+            where: {
+                status: "Aprovado",
+                cliente_id
+            }
+        })
+
+        const dados = await Promise.all(agendamentos.map(async (agendamentoAtual) => {
+
+            const servicos = await prisma.servicos.findUnique({
+                where: {id: parseInt(agendamentoAtual.servicos_id)}
+            })
+
+            return {
+                id: agendamentoAtual.numero_agendamento,
+                data: agendamentoAtual.data,
+                hora: agendamentoAtual.hora,
+                status: agendamentoAtual.status,
+                servicos: agendamentoAtual.servicos,
+                preco: servicos.preco,
+                cliente_id: agendamentoAtual.cliente_id
+            }
+        }))
+
+        return res.status(200).send({message: "Busca feita com sucesso", agendamentos: dados})
+    }
+    main()
+        .catch((err)=>{res.status(400).send({message: "Erro na busca de agendamentos", error: err})})
+        .finally(async ()=>{await prisma.$disconnect()})
+}
+
 module.exports = {
     CadastroCliente,
-    LoginCliente
+    LoginCliente,
+    SolicitarAgendamento,
+    BuscarMeusAgendamentos
 }

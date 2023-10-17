@@ -11,20 +11,30 @@ datasource db {
 }
 
 model cliente {
-  id       Int    @id @default(autoincrement()) //PK
-  nome     String
-  email    String @unique
-  senha    String
+  id    Int    @id @default(autoincrement()) //PK
+  nome  String
+  email String @unique
+  senha String
 }
 
 model admin {
-  id       Int    @id @default(autoincrement()) //PK
-  email    String @unique
-  senha    String
+  id    Int    @id @default(autoincrement()) //PK
+  email String @unique
+  senha String
 }
 
-model servicos{
-  id       Int    @id @default(autoincrement()) //PK
-  nome    String @unique
-  preco    String
+model servicos {
+  id    Int    @id @default(autoincrement()) //PK
+  nome  String @unique
+  preco Int
+}
+
+model agendamento {
+  numero_agendamento Int    @id @default(autoincrement()) //PK
+  status             String
+  data               String
+  hora               String
+  servicos           String
+  servicos_id        Int
+  cliente_id         Int
 }
