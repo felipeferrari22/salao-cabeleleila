@@ -32,8 +32,8 @@ const modificarServico = (objectId, novoNome, novoValor) => {
             "Content-type": "application/json; charset=UTF-8",
         },
         body: JSON.stringify({
-            nome: novoNome ? novoNome : "",
-            valor: novoValor ? novoValor : "",
+            nome: novoNome,
+            preco: parseInt(novoValor)
         }),
         cache: "no-store"
     })
@@ -51,7 +51,7 @@ const modificarServico = (objectId, novoNome, novoValor) => {
     })
     .catch((err) => {                           // -> Erro não previsto
         console.error(err)
-        alert("Houve algo de errado x-x")
+        alert("Ocorreu um erro")
     })
 }
 
@@ -70,7 +70,7 @@ const abrirModalModificarServico = (objectId, nomeAtual, valorAtual) => {
     const detalhesServico = document.getElementById("modal-modificar-servico").children[2]
     detalhesServico.innerHTML = `
     <p>Nome Atual: <span>${nomeAtual}</span></p>
-    <p>Valor Atual: <span>${valorAtual}</span></p>
+    <p>Preço Atual: <span>R$${valorAtual},00</span></p>
     `
 
     // Atribui uma verificação para casos onde o botão de salvar é disabilitado

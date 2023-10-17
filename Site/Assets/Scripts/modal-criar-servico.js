@@ -9,7 +9,7 @@ const fecharModalCriarServico= () => {
     modal.classList.remove("aberto")
   }
   
-  // função que abre o modal
+  // Função que abre o modal
   const abrirModalCriarServico = () => {
     const modal = document.getElementById("container-modal-criar-servico")
     modal.classList.add("aberto")
@@ -63,7 +63,7 @@ const fecharModalCriarServico= () => {
         },
         body: JSON.stringify({
             nome: nome,
-            preco: valor
+            preco: parseInt(valor)
         }),
         cache: "no-store"
     })
@@ -74,7 +74,7 @@ const fecharModalCriarServico= () => {
             alert(json.message)
         } else {                                // -> Sucesso
             inputs.forEach(input => input.value = "")
-            console.log("Espaço cadastrado")
+            console.log("Serviço cadastrado")
             fecharModalCriarServico()
             alert("Serviço criado com sucesso!")
             location.reload()
@@ -88,5 +88,3 @@ const fecharModalCriarServico= () => {
   
   //Atribui a função de criar serviço ao evento "click" do botão de criar Serviço
   document.getElementById("botao-novo-servico").addEventListener("click", abrirModalCriarServico)
-  
-  

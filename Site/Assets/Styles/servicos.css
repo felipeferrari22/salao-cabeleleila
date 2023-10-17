@@ -417,7 +417,7 @@ body {
   
   #modal-modificar-servico .container-detalhes-servico p span{
     font-size: 1em;
-    color: #4CACBC;
+    color: #9900FF;
   }
   
   #modal-modificar-servico .container-inputs-servico {
@@ -469,8 +469,8 @@ body {
   }
   
   #modal-modificar-servico #botao-modificar-modal-modificar-servico {
-    background-color: #4CACBC;
-    border: 1px solid #4CACBC;
+    background-color: #9900FF;
+    border: 1px solid #9900FF;
     border-radius: 5px;
     color: white;
     font-family: "Barlow", sans-serif;
@@ -556,7 +556,7 @@ body {
   }
   
   .corpo-servico p span {
-    color: #4CACBC;
+    color: #9900FF;
     font-weight: 400;
     padding: 0 4px;
   
@@ -656,7 +656,7 @@ body {
   
   #modal-excluir-servico .container-detalhes-servico p span{
     font-size: 1em;
-    color: #4CACBC;
+    color: #9900FF;
   }
   
   
@@ -747,7 +747,7 @@ body {
   }
   
   .corpo-servico p span {
-    color: #4CACBC;
+    color: #9900FF;
     font-weight: 400;
     padding: 0 4px;
   

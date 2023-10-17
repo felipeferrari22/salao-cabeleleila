@@ -51,10 +51,10 @@ const excluirServico = (objectId) => {
 }
 
 // Função que abre o modal com os dados do serviço em questão
-const abrirModalExcluirServico = (objectId, nome, valor) => {
+const abrirModalExcluirServico = (objectId, nome, preco) => {
     // Popula os dados
     document.getElementById("span-nome-servico").innerHTML = nome
-    document.getElementById("span-valor-servico").innerHTML = `R$${valor},00`
+    document.getElementById("span-valor-servico").innerHTML = `R$${preco},00`
 
     // Atribui as funções de fechar aos respectivos botões
     document.getElementById("span-fechar-modal-excluir-servico")

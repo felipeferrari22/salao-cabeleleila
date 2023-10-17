@@ -5,10 +5,10 @@
  */
 
 // Função que popula o HTML com os dados buscados
-const popularServico = (servicos) => {
+const popularServicos = (servicos) => {
     // [{id, nome, valor}, {id, nome, valor}, {id, nome, valor}]
     let servicosHTML = ""
-
+    console.log(servicos)
     for(let i = 0; i<servicos.length; i++)
     {
         const servico = servicos[i]
@@ -17,8 +17,8 @@ const popularServico = (servicos) => {
         <div class="servico" id="servico-${i}">
             ${servico.nome}
             <div class="container-opcoes-servico">
-                <button type="button" class="modificar-servico" id="modificar-servico-${i}" objectId="${servico.id}" valor="${servico.valor}" nome="${servico.nome}"> Modificar </button>
-                <button type="button" class="excluir-servico" id="excluir-servico-${i}" objectId="${servico.id}" valor="${servico.valor}" nome="${servico.nome}"> Excluir </button>
+                <button type="button" class="modificar-servico" id="modificar-servico-${i}" objectId="${servico.id}" valor="${servico.preco}" nome="${servico.nome}"> Modificar </button>
+                <button type="button" class="excluir-servico" id="excluir-servico-${i}" objectId="${servico.id}" valor="${servico.preco}" nome="${servico.nome}"> Excluir </button>
             </div>
         </div> 
         `
@@ -54,11 +54,12 @@ const buscarServicos = () => {
     })
     .then(async (res) => {
         const json = await res.json()
+        console.log(json)
         if(res.status.toString()[0] === "4") {  // -> Erro Prevísto
             console.error(json.message)
             alert(json.message)
         } else {                                // -> Sucesso
-            json.length > 0 ? popularServicos(json) : null
+            Object.keys(json).length > 0 ? popularServicos(json.servicos) : null
         }
     })
     .catch((err) => {                           // -> Erro não previsto
