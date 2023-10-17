@@ -22,3 +22,9 @@ model admin {
   email    String @unique
   senha    String
 }
+
+model servicos{
+  id       Int    @id @default(autoincrement()) //PK
+  nome    String @unique
+  preco    String
+}

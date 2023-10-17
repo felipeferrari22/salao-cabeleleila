@@ -15,7 +15,7 @@ header {
 }
 
 header h1 {
-    background-image: url("../Icons/brush-decal.svg");
+    background-image: url("../Icons/background.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

@@ -39,3 +39,34 @@ const calendar = new VanillaCalendar("#calendar", {
         },
     }
 }).init()
+
+// Função que apaga dias que estão no passado
+const apagarDias = () => {
+    // Para todo dia, verifíca se há locações e modifica sua classe de acordo
+    const dias = document.getElementsByClassName("vanilla-calendar-day__btn")
+    for(let i = 0; i < dias.length; i++)
+    {
+        const dia = dias[i]
+
+        // Ler a Data
+        const hoje = dia.getAttribute("data-calendar-day")  // Formato YYYY-MM-DD
+
+        // Formatar a Data
+        const anoHoje = hoje.split("-")[0]
+        const mesHoje = hoje.split("-")[1]
+        const diaHoje = hoje.split("-")[2]
+
+        // Criar um objeto Date
+        const dataHoje = new Date(parseInt(anoHoje), parseInt(mesHoje) - 1, parseInt(diaHoje))
+        // Comparar a Data
+        if(dataHoje.getTime() < new Date().getTime()) {
+            // Atribuir Classe
+            dia.disabled = true
+            dia.classList.add("passado")
+        } else {
+            // Remover Classe
+            dia.disabled = false
+            dia.classList.remove("passado")
+        }
+    }
+}

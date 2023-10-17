@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../Assets/Icons/favicon.ico"
+    />
+    <!--Importação de arquivos CSS-->
+    <link rel="stylesheet" href="../../Assets/Styles/reset.css" />
+    <link rel="stylesheet" href="../../Assets/Styles/servicos.css" />
+    <!--Importação de arquivos JavaScript-->
+    <script defer src="../../Assets/Scripts/admin-cabecalho.js"></script>
+    <script defer src="../../Assets/Scripts/servicos.js"></script>
+    <script defer src="../../Assets/Scripts/modal-criar-servico.js"></script>
+    <script defer src="../../Assets/Scripts/modal-modificar-servico.js"></script>
+    <script defer src="../../Assets/Scripts/modal-excluir-servico.js"></script>
+    <title>Serviços • Salão de Beleza da Leila</title>
+  </head>
+
+  <body>
+    <!--Cabeçalho da página [logout e menu]-->
+    <header id="cabecalho">
+      <!--Botão de logout-->
+      <button id="botao-logout">
+        <img src="../../Assets/Icons/logout.svg" alt="X" />
+        Logout
+      </button>
+
+      <div id="container-menu">
+        <!--Botão de abrir menu-->
+        <button id="botao-abrir-menu">
+          <img src="../../Assets/Icons/menu.svg" alt="Menu" />
+        </button>
+
+        <!--Menu aberto-->
+        <nav id="menu-navegacao" style="display: none">
+          <button id="botao-fechar-menu">
+            <img src="../../Assets/Icons/chevron-cima.svg" alt="Fechar" />
+          </button>
+          <a href="./menu.html">Calendário</a>
+          <a class="link-atual">Serviços</a>
+          <a href="./desempenho.html">Desempenho Semanal</a>
+          <a href="./agendamentos.html">Agendamentos</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Conteúdo da Página -->
+    <section class="container-conteudo">
+      <!-- Título da Página -->
+      <div class="container-titulo">
+        <h1>Tela de Gerenciamento de Serviços</h1>
+      </div>
+
+      <!-- Botões do Gerenciamento de Serviços -->
+      <div id="container-botoes-gerenciamento">
+        <!-- Botão de Criar Serviço -->
+        <button type="button" id="botao-novo-servico">Novo Serviço</button>
+
+        <!-- Botões referentes aos serviços -->
+        <section class="container-servicos">
+          <!-- Serviços Inseridos via JavaScript -->
+          <!-- ================================ -->
+        </section>
+      </div>
+    </section>
+
+    <!--modal (overlay) criação de serviço-->
+    <section id="container-modal-criar-servico">
+      <div id="modal-criar-servico">
+        <!--Botão de fechar-->
+        <span id="fechar-modal-criar-servico">
+          <img src="../../Assets/Icons/fechar.svg" alt="X" />
+        </span>
+
+        <!--Cabeçalho do modal-->
+        <header>
+          <h1 id="titulo-modal">Criar Serviço</h1>
+        </header>
+
+        <!--Input: nome do Serviço-->
+        <label for="nome-servico">Nome do Serviço</label>
+        <input id="nome-servico" type="text" />
+
+        <!--Input Valor-->
+        <label for="valor">Preço do Serviço</label>
+        <input id="valor-servico" type="number" min="0" />
+
+        <!--Botões de cancelar e criar Serviço-->
+        <div>
+          <button type="button" id="botao-cancelar">Cancelar</button>
+          <button type="button" id="botao-criar" disabled>Criar</button>
+        </div>
+      </div>
+    </section>
+    <!-- Modal de Modificar Serviço -->
+    <section id="container-modal-modificar-servico">
+      <div id="modal-modificar-servico">
+
+          <!-- Botão de Fechar -->
+          <span id="span-fechar-modal-modificar-servico">
+              <img src="../../Assets/Icons/fechar.svg" alt="X">
+          </span>
+
+          <!-- Cabeçalho do Modal -->
+          <h1>Modificando Serviço</h1>
+
+          <!-- Detalhes do Serviço -->
+          <div class="container-detalhes-servico">
+            <!-- Detalhes inseridos pelo JS -->
+            <!-- ========================== -->
+          </div>
+          
+          <div class="container-inputs-servico">
+            <!-- Input: Nome do serviço -->
+            <label for="nome-modificar-servico">Novo nome do Serviço (Opcional)</label>
+            <input id="nome-modificar-servico" type="text">
+
+            <!-- Input: Valor do Serviço -->
+            <label for="valor-modificar-servico">Novo valor do Serviço (Opcional)</label>
+            <input id="valor-modificar-servico" type="number" min="1">
+          </div>
+
+          <!-- Botões de Cancelar e modificar conta -->
+          <div class="container-botoes-modificar">
+              <button type="button" id="botao-fechar-modal-modificar-servico">Cancelar</button>
+              <button type="button" id="botao-modificar-modal-modificar-servico" disabled>Salvar</button>
+          </div>
+      </div>
+  </section>
+  <!-- ========================== -->
+
+    <!-- Modal de Exclusão de Serviço -->
+    <section id="container-modal-excluir-servico">
+      <div id="modal-excluir-servico">
+
+          <!-- Botão de Fechar -->
+          <span id="span-fechar-modal-excluir-servico">
+              <img src="../../Assets/Icons/fechar.svg" alt="X">
+          </span>
+
+          <!-- Cabeçalho do Modal -->
+          <h1>ATENÇÃO</h1>
+          <h2>Deseja excluir esse Serviço?</h2>
+          <div class="container-detalhes-servico">
+            <p>Nome: <span id="span-nome-servico"></span></p>
+            <p>Preço: <span id="span-valor-servico"></span></p>
+          </div>
+
+          <!-- Botões de Cancelar e Excluir serviço -->
+          <div class="container-botoes-excluir">
+              <button type="button" id="botao-fechar-modal-excluir-servico">Cancelar</button>
+              <button type="button" id="botao-excluir-modal-excluir-servico">Excluir</button>
+          </div>
+      </div>
+  </section>
+  <!-- ========================== -->
+  </body>
+</html>

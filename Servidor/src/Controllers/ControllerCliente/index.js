@@ -77,39 +77,39 @@ const CadastroCliente = (req, res) => {
  * }
  */
 
-const LoginCliente = (req, res) => {
-    const main = async () => {
-        const { email, senha } = req.body;
-        const { AuthPwd } = require('../../Services');
+const LoginCliente = async (req, res) => {
+    const {email, senha} = req.body
+    const { AuthPwd } = require('../../Services')
+    
+    const cliente = await prisma.cliente.findUnique({
+        where: {
+            email: email,
+        }
+    })
 
-        const cliente = await prisma.cliente.findUnique({
-            where: {
-                email: email,
-            }
-        });
-
+    if(cliente){
         if(await AuthPwd(cliente.senha, senha)) {
             const dados = {
                 email: cliente.email,                    
                 nome: cliente.nome,
-                id: cliente.id,
-                belongsTo: "CLIENTE"
+                id: cliente.id
             }
             const accessToken= jwt.sign(
                 dados,
                 process.env.JWT_ACCESS_TOKEN_SECRET,
                 {expiresIn: "1d"}
             )
-            return res.status(202).send({accessToken, message: "Login bem-sucedido!", tipo: "cliente"})
+            return res.status(202).send({accessToken, message: "Login bem-sucedido!"})
         } else {
-            // Senha incorreta
-            return res.status(401).send({ message: "Senha incorreta" });
+            return res.status(401).send({message: "Senha incorreta"})
         }
-
-        main()
-        .catch((err)=>{res.status(400).send(err); throw err})
-        .finally(async ()=>{await prisma.$disconnect()})
+    } else{
+        return res.status(404).send({message: "Usuário não cadastrado"})
     }
+
+main()
+    .catch((err)=>{res.status(400).send(err); throw err})
+    .finally(async ()=>{await prisma.$disconnect()})
 }
 
 module.exports = {

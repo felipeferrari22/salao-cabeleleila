@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../Assets/Icons/favicon.ico">
+    <!-- Importação de Arquivos de Estilo (CSS) -->
+    <link rel="stylesheet" href="../../Assets/Styles/reset.css">
+    <!-- Importação de Arquivos de Script (JS) -->
+    <script defer src="../../Assets/Scripts/admin-cabecalho.js"></script>
+    <!-- Tela com o Calendário (Morador) -->
+    <title>Menu • Salão de Beleza da Leila</title>
+</head>
+<body>
+    
+    <!-- Cabeçalho da página [Logout e Menu] -->
+    <header id="cabecalho">
+        <!-- Botão de Logout -->
+        <button id="botao-logout">
+            <img src="../../Assets/Icons/logout.svg" alt="X">
+            Logout
+        </button>
+
+        <div id="container-menu">
+            <!-- Botão de Abrir Menu  -->
+            <button id="botao-abrir-menu">
+                <img src="../../Assets/Icons/menu.svg" alt="Menu">
+            </button>
+
+            <!-- Menu Aberto -->
+            <nav id="menu-navegacao" style="display: none;">
+                <button id="botao-fechar-menu">
+                    <img src="../../Assets/Icons/chevron-cima.svg" alt="Fechar">
+                </button>
+                <a class="link-atual">Calendário</a>
+                <a href="./servicos.html">Serviços</a>
+                <a href="./desempenho.html">Desempenho Semanal</a>
+                <a href="./agendamentos.html">Agendamentos</a>
+            </nav>
+        </div>
+    </header>

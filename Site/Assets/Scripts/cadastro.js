@@ -9,12 +9,13 @@ const confirmarCriarConta = document.getElementById("confirmar-senha-criar-conta
 // Função de validação dos inputs para tirar/colocar o disabled no botão de criar
 const validarInputs = () => {
     let validacao = 0
+    inputCriarConta.value !== "" ? validacao++ : null   
     senhaCriarConta.value !== "" ? validacao++ : null                       //Senha !== ""
     confirmarCriarConta.value !== "" ? validacao++ : null                   //Confirmação !== ""
     senhaCriarConta.value === confirmarCriarConta.value ? validacao++ : null//Senha === Confirmação
 
     // Caso todos os testes sejam verdadeiros, retira o disable do botão
-    validacao === 3 ? botaoCriar.disabled = false : botaoCriar.disabled = true
+    validacao === 4 ? botaoCriar.disabled = false : botaoCriar.disabled = true
 }
 
 // Atribui a função de validar no evento "input" dos <input>s
