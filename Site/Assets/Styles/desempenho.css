@@ -1,0 +1,212 @@
+/*
+    Estilos da página de Gerenciamento de Serviços (Admin/servicos.html)
+*/
+
+body {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    height: clac(100vh - 30px);
+    padding-top: 30px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  header button {
+    outline: none;
+    background-color: transparent;
+    border: none;
+  }
+  
+  header #botao-logout {
+    cursor: pointer;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    font-family: "Barlow", sans-serif;
+    font-size: 1em;
+    color: #9900FF;
+  }
+  
+  header #container-menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  header #botao-abrir-menu {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  header #botao-abrir-menu:hover {
+    transform: scale(1.1);
+  }
+  
+  header nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #9900FF;
+    border-radius: 10px 0 10px 10px;
+    padding: 4px 12px;
+  }
+  
+  header nav #botao-fechar-menu {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  header nav a {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+  
+    text-decoration: none;
+    font-family: "Crimson Text", serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #ffffff;
+  
+    padding: 2px 0;
+    margin: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    transition: border 0.2s;
+  }
+  
+  header nav a.link-atual {
+    border-bottom: 1px solid white;
+    user-select: none;
+  }
+  
+  header nav a:hover {
+    border-bottom: 1px solid #ffffff;
+  }
+  
+  .container-conteudo h1 {
+    font-family: "Barlow", serif;
+    font-weight: 400;
+    font-size: 2em;
+    color: #a2a2a2;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #a2a2a280;
+    margin-top: 30px;
+  }
+  
+  #container-botoes-gerenciamento {
+    display: flex;
+    flex-direction: column;
+  
+    margin-top: 30px;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #botao-novo-servico {
+    background-color: #9900FF;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+  
+    font-family: "Barlow", sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    color: white;
+  
+    padding: 8px 20px;
+    width: 80%;
+    margin: 0 auto;
+  
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  #botao-novo-servico:hover {
+    transform: scale(1.05);
+  }
+  
+  .container-servicos {
+    margin-top: 50px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .container-servicos .servico {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    font-family: "Barlow", sans-serif;
+    font-size: 1.1em; /* 1em -> 100%: 16px*/
+    font-weight: 500;
+    background-color: #f2d8b0;
+  
+    padding-left: 10px;
+    margin-bottom: 20px;
+    color: #282828;
+  
+    border-radius: 5px;
+  }
+  
+  .container-servicos .servico .container-opcoes-servico {
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .container-servicos .servico .container-opcoes-servico button {
+    outline: 0;
+  
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 0.9em;
+    border: 0;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button.modificar-servico {
+    background-color: #9900FF;
+    color: white;
+    border-radius: 0 5px 0 0;
+  }
+  
+  button.modificar-servico:hover {
+    background-color: #9900FF;
+  }
+  
+  button.excluir-servico {
+    background-color: #bd2e24;
+    color: white;
+    border-radius: 0 0 5px 0;
+  }
+  
+  button.excluir-servico:hover {
+    background-color: #8d2018;
+  }
+  
+  @media screen and (max-width: 600px) {
+  
+    .container-titulo h1 {
+      font-size: 1.5em;
+    }
+  
+    #container-botoes-gerenciamento {
+      width: 80%;
+      margin: 30px auto 0 auto;
+    }
+  }

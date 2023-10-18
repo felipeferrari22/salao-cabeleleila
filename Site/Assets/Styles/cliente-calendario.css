@@ -1,4 +1,4 @@
-/* CSS da tela de Calendário do painel do Morador (Morador/calendario.html) */
+/* CSS da tela de Calendário do painel do Cliente (cliente/calendario.html) */
 
 body{
     display: flex;
@@ -16,17 +16,18 @@ header {
 
 header h1 {
     background-image: url("../Icons/background.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-repeat: repeat;
+    background-size: 100%;
+    width: 160px;
+    border-radius: 25px;
+    align-self: center;
 
-    font-size: 1.25em;
-    font-family: "Crimson Text", serif;
+    font-size: 2em;
+    font-family: 'Great Vibes', serif;
+    font-weight: 10;
+    font-style: italic;
     color: #FFFFFF;
     text-align: center;
-
-    padding: 30px 60px;
-    transition: all .2s;
 }
 
 header button {
@@ -63,7 +64,7 @@ header #botao-logout img {
 }
 
 .container-calendario h1 {
-    font-family: "New Century Schoolbook", serif;
+    font-family: "Barlow", serif;
     font-weight: 1050;
     font-size: 2em;
     color: #A2A2A2;
@@ -196,6 +197,7 @@ header #botao-logout img {
 
     .container-calendario h1 {
         padding-bottom: 30px;
+        margin-left: 90px;
     }
 
     .container-calendario a {
@@ -259,7 +261,7 @@ CSS Do Modal (Overlay) de Confirmação
     background-image: none;
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    font-family: "Crimson Text", serif;
+    font-family: "Barlow", serif;
     font-size: 2em;
     color: #A2A2A2;
 }
@@ -323,7 +325,7 @@ CSS Do Modal (Overlay) de Confirmação
     text-decoration-thickness: 1px;
 
 }
-.modal-confirmacao #container-locacoes {
+.modal-confirmacao #container-agendamentos {
     align-self: center;
     width: 90%;
     height: 100%;
@@ -335,12 +337,12 @@ CSS Do Modal (Overlay) de Confirmação
 }
 
 .modal-confirmacao #botao-agendar-modal-confirmacao {
-    background-color: #F2D8B0;
-    border: 1px solid #F2D8B0;
+    background-color: #9900FF;
+    border: 1px solid #9900FF;
     border-radius: 5px;
-    color: #282828;
+    color: #FFFFFF;
     font-family: "Barlow", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1em;
     padding: 10px 20px;
     width: fit-content;
@@ -379,13 +381,13 @@ CSS Do Modal (Overlay) de Confirmação
     transform: scale(1.1)
 }
 
-.modal-confirmacao #container-locacoes {
+.modal-confirmacao #container-agendamentos {
     display: flex;
     flex-direction: column;
     padding: 0 12px;
 }
 
-.modal-confirmacao #container-locacoes h1 {
+.modal-confirmacao #container-agendamentos h1 {
     font-family: "Barlow", sans-serif;
     font-weight: 400;
     font-size: 1em;
@@ -404,7 +406,7 @@ input[type="radio"] {
     transform: scale(1.5);
 }
 
-.cabecalho-locacao {
+.cabecalho-agendamento {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -421,7 +423,7 @@ input[type="radio"] {
     color: #282828;
 }
 
-.modal-confirmacao .cabecalho-locacao.alugado {
+.modal-confirmacao .cabecalho-agendamento.alugado {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -438,7 +440,7 @@ input[type="radio"] {
     margin-left: 50px;
 }
 
-.modal-confirmacao .cabecalho-locacao.selecionado {
+.modal-confirmacao .cabecalho-agendamento.selecionado {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -456,18 +458,18 @@ input[type="radio"] {
     color: #282828;
 }
 
-.modal-confirmacao .cabecalho-locacao:not(.alugado):hover {
+.modal-confirmacao .cabecalho-agendamento:not(.alugado):hover {
     transform: scale(1.01)
 }
 
-.modal-confirmacao .corpo-locacao {
+.modal-confirmacao .corpo-agendamento {
     display: flex;
     flex-direction: column;
     padding: 0 10px;
     margin: 2px 0 20px 0;
 }
 
-.corpo-locacao h2 {
+.corpo-agendamento h2 {
     font-family: 'Barlow';
     font-style: normal;
     font-weight: 700;
@@ -478,7 +480,7 @@ input[type="radio"] {
     text-align: start;
 }
 
-.corpo-locacao h2.alugado {
+.corpo-agendamento h2.alugado {
     font-family: 'Barlow', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -489,7 +491,7 @@ input[type="radio"] {
     text-align: start;
 }
 
-.corpo-locacao h3 {
+.corpo-agendamento h3 {
     font-family: 'Barlow';
     font-style: normal;
     font-weight: 300;

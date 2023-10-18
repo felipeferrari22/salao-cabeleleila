@@ -231,9 +231,65 @@ const BuscarMeusAgendamentos = (req, res) => {
         .finally(async ()=>{await prisma.$disconnect()})
 }
 
+/**
+ * @api {get} /BuscarAgendamentos Buscar Agendamentos
+ * @apiName Buscar Agendamentos
+ * @apiGroup Solicitações
+ * @apiVersion 1.0.0
+ * 
+ * @apiPermission Admin
+ * @apiHeader {String} auth Token de acesso JWT
+ * @apiHeaderExample {json} Exemplo de Header:
+ * {
+ *  "auth": [Token de Acesso JWT]
+ * }
+ *  
+ * @apiSuccessExample Exemplo de Sucesso:
+ * {
+ *  message: "Busca feita com sucesso",
+ *  usuarios: [{id, data, horario, espaco, status}, ...]
+ * }
+ * @apiErrorExample Exemplo de Erro:
+ * {
+ *  message: "Erro na busca de agendamentos",
+ *  error: {errorObject}
+ * }
+ */
+
+const ClienteBuscarAgendamentos = (req, res) => {
+    const main = async () => {
+        if(req.dados.belongsTo !== "CLIENTE") return res.status(403).send({message: "Permissão negada [!Cliente]"})
+        
+        const agendamentos = await prisma.agendamento.findMany({
+            where: {status: "Aprovado"}
+        })
+
+        const dados = await Promise.all(agendamentos.map(async (agendamentoAtual) => {
+
+            const cliente = await prisma.cliente.findUnique({
+                where: {id: parseInt(agendamentoAtual.cliente_id)}
+            })
+            return {
+                id: agendamentoAtual.numero_agendamento,
+                data: agendamentoAtual.data,
+                hora: agendamentoAtual.hora,
+                servicos: agendamentoAtual.servicos,
+                status: agendamentoAtual.status,
+                cliente_nome: cliente.nome
+            }
+        }))
+
+        return res.status(200).send({message: "Busca feita com sucesso", agendamentos: dados})
+    }
+    main()
+        .catch((err)=>{res.status(400).send({message: "Erro na busca de agendamentos", error: err})})
+        .finally(async ()=>{await prisma.$disconnect()})
+}
+
 module.exports = {
     CadastroCliente,
     LoginCliente,
     SolicitarAgendamento,
-    BuscarMeusAgendamentos
+    BuscarMeusAgendamentos,
+    ClienteBuscarAgendamentos
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../Assets/Icons/favicon.ico"
+    />
+    <!--Importação de arquivos CSS-->
+    <link rel="stylesheet" href="../../Assets/Styles/reset.css" />
+    <link rel="stylesheet" href="../../Assets/Styles/desempenho.css" />
+    <!--Importação de arquivos JavaScript-->
+    <script defer src="../../Assets/Scripts/admin-cabecalho.js"></script>
+    <script defer src="../../Assets/Scripts/desempenho.js"></script>
+    <title>Desempenho • Salão de Beleza da Leila</title>
+  </head>
+
+  <body>
+    <!--Cabeçalho da página [logout e menu]-->
+    <header id="cabecalho">
+      <!--Botão de logout-->
+      <button id="botao-logout">
+        <img src="../../Assets/Icons/logout.svg" alt="X" />
+        Logout
+      </button>
+
+      <div id="container-menu">
+        <!--Botão de abrir menu-->
+        <button id="botao-abrir-menu">
+          <img src="../../Assets/Icons/menu.svg" alt="Menu" />
+        </button>
+
+        <!--Menu aberto-->
+        <nav id="menu-navegacao" style="display: none">
+          <button id="botao-fechar-menu">
+            <img src="../../Assets/Icons/chevron-cima.svg" alt="Fechar" />
+          </button>
+          <a href="./menu.html">Calendário</a>
+          <a href="./servicos.html">Serviços</a>
+          <a class="link-atual">Desempenho Semanal</a>
+          <a href="./agendamentos.html">Agendamentos</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Conteúdo da Página -->
+    <section class="container-conteudo">
+      <!-- Título da Página -->
+      <div class="container-titulo">
+        <h1>Tela de Desempenho Semanal</h1>
+      </div>
+
+  </body>
+</html>

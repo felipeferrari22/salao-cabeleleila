@@ -67,6 +67,7 @@ document.getElementById("botao-login").addEventListener("click", () => {
         } else {                                // -> Sucesso
             console.log(json.message)
             document.cookie = `JWT=${json.accessToken}` // -> Salva JWT nos Cookies
+            document.cookie = `EMAIL=${(email)}`   // -> Salva o Email do Cliente nos Cookies
             window.location.href = "./calendario.html"
         }
     })

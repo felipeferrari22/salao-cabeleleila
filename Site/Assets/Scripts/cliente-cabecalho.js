@@ -1,6 +1,6 @@
 /**
  * Script utilizado no funcionamento do
- * cabeçalho no painel do morador
+ * cabeçalho no painel do Cliente
  */
 
 // Verifica se há o JWT, se não envia o usuário para tela de login

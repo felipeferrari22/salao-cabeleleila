@@ -190,6 +190,9 @@ const DeletarServico = (req, res) => {
         await prisma.servicos.delete({
             where: {id: parseInt(id)}
         })
+        await prisma.agendamento.delete({
+            where: {servicos_id: parseInt(servicos.id)}
+        })
         return res.status(200).send({message: "Serviço removido com sucesso"})
     }
 
@@ -199,7 +202,7 @@ const DeletarServico = (req, res) => {
 }
 
 /**
- * @api {delete} /ModificarServico/:id Modificar Serviço
+ * @api {put} /ModificarServico/:id Modificar Serviço
  * @apiName Modificar Serviço
  * @apiGroup Serviços
  * @apiVersion 1.0.0

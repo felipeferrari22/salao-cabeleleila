@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../Assets/Icons/favicon.ico">
+    <!-- Importação de Arquivos de Script (JS) -->
+    <script defer src="../../Assets/Scripts/cliente-cabecalho.js"></script>
+    <script defer src="../../Assets/Scripts/cliente-agendamentos.js"></script>
+    <!-- Importação de Arquivos de Estilo (CSS) -->
+    <link rel="stylesheet" href="../../Assets/Styles/reset.css">
+    <link rel="stylesheet" href="../../Assets/Styles/cliente-agendamentos.css">
+    <title>Meus Agendamentos • Salão de Beleza da Leila</title>
+    <!-- Tela com os agendamentos do Cliente -->
+</head>
+<body>
+    <!-- Cabeçalho da página [Logout e Menu] -->
+    <header id="cabecalho">
+        
+        <!-- Cabeçalho -->
+        <h1 id="cliente-cabecalho">Olá!</h1>
+        
+        <!-- Botão de Logout -->
+        <button id="botao-logout">
+            <img src="../../Assets/Icons/logout.svg" alt="X">
+            Logout
+        </button>        
+    </header>
+
+    <!-- Conteúdo da Página -->
+    <section class="container-conteudo">
+
+        <!-- Título e Subtítulo da Página -->
+        <div>
+            <h1>Meus Agendamentos</h1>
+        </div>
+
+        <!-- Lista de Conteúdos -->
+        <ul id="container-agendamentos">
+            <!-- 
+                Agendamentos inseridas via JS (cliente-agendamentos.js) 
+                seguindo o template HTML abaixo:
+            -->
+        </ul>
+
+        <!-- Botão "Ver Calendário" -->
+        <a href="./calendario.html">Ver Calendário</a>
+
+    </section>
+    
+</body>
+</html>

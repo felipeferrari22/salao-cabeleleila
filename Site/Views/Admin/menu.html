@@ -7,9 +7,13 @@
     <link rel="icon" type="image/x-icon" href="../../Assets/Icons/favicon.ico">
     <!-- Importação de Arquivos de Estilo (CSS) -->
     <link rel="stylesheet" href="../../Assets/Styles/reset.css">
+    <link rel="stylesheet" href="../../Assets/Libraries/vanilla-calendar/vanilla-calendar.min.css">
+    <link rel="stylesheet" href="../../Assets/Styles/menu.css">
     <!-- Importação de Arquivos de Script (JS) -->
     <script defer src="../../Assets/Scripts/admin-cabecalho.js"></script>
-    <!-- Tela com o Calendário (Morador) -->
+    <script defer src="../../Assets/Libraries/vanilla-calendar/vanilla-calendar.min.js"></script>
+    <script defer src="../../Assets/Scripts/menu.js"></script>
+    <!-- Tela com o Calendário (Admin) -->
     <title>Menu • Salão de Beleza da Leila</title>
 </head>
 <body>
@@ -40,3 +44,15 @@
             </nav>
         </div>
     </header>
+    <!-- Conteúdo da Página -->
+    <section class="container-calendario">
+        
+        <!-- Título e Subtítulo da Página -->
+        <div class="titulo">
+            <h1>Calendário de Agendamento</h1>
+            <h2>Selecione um dia para ver sua disponibilidade</h2>
+        </div>
+
+        <!-- Calendário {VanillaCalendar} -->
+        <div id="calendar"></div>
+    </section>

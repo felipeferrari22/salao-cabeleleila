@@ -7,11 +7,12 @@ const { BuscarServicos, authJWT } = require('./Controllers/ControllerUsuario')
 routes.get('/BuscarServicos', AuthTokenAcesso, BuscarServicos)
 routes.get('/authJWT', AuthTokenAcesso, authJWT)
 
-const { CadastroCliente, LoginCliente, SolicitarAgendamento, BuscarMeusAgendamentos } = require('./Controllers/ControllerCliente')
+const { CadastroCliente, LoginCliente, SolicitarAgendamento, BuscarMeusAgendamentos, ClienteBuscarAgendamentos } = require('./Controllers/ControllerCliente')
 routes.post('/Cadastro', CadastroCliente)
 routes.post('/LoginCliente', LoginCliente)
 routes.post('/SolicitarAgendamento', AuthTokenAcesso, SolicitarAgendamento)
 routes.get('/BuscarMeusAgendamentos', AuthTokenAcesso, BuscarMeusAgendamentos)
+routes.get('/ClienteBuscarAgendamentos', AuthTokenAcesso, ClienteBuscarAgendamentos)
 
 const { 
     CadastroAdmin,
