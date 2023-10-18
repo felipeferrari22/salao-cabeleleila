@@ -1,5 +1,7 @@
 Para conectar-se ao banco de dados deste projeto, é necessário criar um schema chamado "salao_cabeleleila".
 
+Após isso, use o comando 'USE salao_cabeleleila' em seu MySQL Workbench 
+
 Após isso, acesse o arquivo .env, por meio do path "./salao-cabeleleila/Servidor/.env".
 
 Configure o "DATABASE_URL" da seguinte forma: "mysql://SEUUSUARIO:SUASENHA@localhost:3306/salao_cabeleleila"
