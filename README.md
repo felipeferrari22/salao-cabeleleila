@@ -1,6 +1,6 @@
 # Salão de Beleza da Leila
 
-**Este é o Repositório do Salão de Beleza da Leila, desenvolvido para o Desafio Técnico de Desenvolvimento da DSIN.**
+**Este é o Repositório do Salão de Beleza da Leila, desenvolvido para o Teste Prático de Desenvolvimento da DSIN.**
 
 <img src="https://www.univem.edu.br/storage/paginas/September2019/Marca%20DSIN%20Principal%20em%20Alta.jpg" alt="Banner DSIN" height=110px>
 
