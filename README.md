@@ -21,6 +21,7 @@ yarn start
 ```
 
 <strong>Inicialização do Site</strong>
+
 Abra o arquivo 'index.html' na pasta Root do Projeto.
 
 ## Documentação da API
