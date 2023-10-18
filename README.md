@@ -21,12 +21,7 @@ yarn start
 ```
 
 <strong>Inicialização do Site</strong>
-(Inicializado em **http://localhost:5500/**)
-```bash
-# .../salao-cabeleleila/Site/
-yarn install
-yarn start
-```
+Abra o arquivo 'index.html' na pasta Root do Projeto.
 
 ## Documentação da API
 Você pode acessar a documentação da API através do **http://localhost:3000/** quando o Servidor estiver inicializado.

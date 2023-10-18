@@ -1,0 +1,14 @@
+Para conectar-se ao banco de dados deste projeto, é necessário criar um schema chamado "salao_cabeleleila".
+
+Após isso, acesse o arquivo .env, por meio do path "./salao-cabeleleila/Servidor/.env".
+
+Configure o "DATABASE_URL" da seguinte forma: "mysql://SEUUSUARIO:SUASENHA@localhost:3306/salao_cabeleleila"
+
+Após isso, use o comando 'yarn migrate dev', para que o seu banco de dados local se sincronize com o schema.prisma do projeto.
+
+Use um programa como Insomnia ou Postman para Cadastrar um Administrador no seguinte URL: localhost:3000/CadastroAdmin, 
+utilizando o método POST e com o seguinte body em JSON:
+{
+	"email": "leila@gmail.com",
+	"senha": "senha123"
+}
