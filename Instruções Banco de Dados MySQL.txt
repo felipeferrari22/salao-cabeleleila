@@ -4,9 +4,9 @@ Após isso, use o comando 'USE salao_cabeleleila' em seu MySQL Workbench
 
 Após isso, acesse o arquivo .env, por meio do path "./salao-cabeleleila/Servidor/.env".
 
-Configure o "DATABASE_URL" da seguinte forma: "mysql://SEUUSUARIO:SUASENHA@localhost:3306/salao_cabeleleila"
+Configure o "DATABASE_URL" da seguinte forma: "mysql://SEUUSUARIO:SUASENHA@localhost:SUAPORTA/salao_cabeleleila" (a porta padrão, normalmente, é 3306)
 
-Após isso, use o comando 'yarn migrate dev', para que o seu banco de dados local se sincronize com o schema.prisma do projeto.
+Após isso, use o comando 'cd Servidor' e o comando 'yarn migrate dev', para que o seu banco de dados local se sincronize com o schema.prisma do projeto. Use então o comando 'yarn start'.
 
 Use um programa como Insomnia ou Postman para Cadastrar um Administrador no seguinte URL: localhost:3000/CadastroAdmin, 
 utilizando o método POST e com o seguinte body em JSON:
