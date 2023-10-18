@@ -1,6 +1,7 @@
 # Salão de Beleza da Leila
 
 **Este é o Repositório do Salão de Beleza da Leila, desenvolvido para o Desafio Técnico de Desenvolvimento da DSIN.**
+<img src="https://www.univem.edu.br/storage/paginas/September2019/Marca%20DSIN%20Principal%20em%20Alta.jpg" alt="Banner DSIN" height=110px>
 
 
 ## Desenvolvido utilizando
@@ -22,7 +23,7 @@ yarn start
 
 <strong>Inicialização do Site</strong>
 
-Abra o arquivo 'index.html' na pasta Root do Projeto.
+Abra o arquivo 'index.html' na pasta Root do Projeto ou utilize uma extensão como "Live Server" do Visual Studio Code.
 
 ## Documentação da API
 Você pode acessar a documentação da API através do **http://localhost:3000/** quando o Servidor estiver inicializado.
